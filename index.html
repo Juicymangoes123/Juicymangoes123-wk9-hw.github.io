@@ -3,12 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Land use change Australia</title>
+    <title>Patterns of migration in Australia</title>
 
-    <link rel="stylesheet" href="land_cover_change.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    
+    <link rel="stylesheet" href="styles.css" media="all">
 </head>
+
 <body>
-   <p id="title"> Land use change Australia </p>
+
+   <p id="title"> Patterns of migration in Australia </p>
    <p id="middle"> hello </p>
+
+    <div id="migration_map"></div>
+
+   <script type="text/javascript">
+        var spec = "migration_map.vg.json";
+        vegaEmbed("#migration_map", spec).then(function(results) {}).catch(console.error);
+        console.log("hello");
+   </script>
+
 </body>
+
 </html>
