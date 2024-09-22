@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
     "height": 450,
-    "title": "Patterns of migration into Australia",
+    "title": "Patterns of migration into Australia in 2022-23 (estimates)",
     "projection": {"type": "equirectangular"},
     "layer":[
         {
@@ -21,16 +21,16 @@
                         "fields": ["Y2022_23", "Y2022_23_total"]
                     }
                 },
-                {"calculate": "datum.Y2022_23/datum.Y2022_23_total", "as": "% of annual national migration total"}
+                {"calculate": "datum.Y2022_23/datum.Y2022_23_total * 100", "as": "% of annual national migration"}
             ],
             "mark": {"type": "geoshape"},
             "encoding": {
                 "color": {
-                    "field": "% of annual national migration total",
+                    "field": "% of annual national migration",
                     "type": "quantitative",
                     "scale": {
                         "type": "threshold",
-                        "domain": [0.05, 0.10, 0.20, 0.30],
+                        "domain": [5, 10, 20, 30],
                         "range": ["#edf8fb","#b2e2e2","#66c2a4","#2ca25f","#006d2c"]
                     }
                 }
@@ -41,7 +41,7 @@
                 "url": "au-states.topojson",
                 "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
             },
-            "mark": {"type": "geoshape", "stroke": "red"}
+            "mark": {"type": "geoshape", "stroke": "dimgrey"}
         }
     ]
 }
