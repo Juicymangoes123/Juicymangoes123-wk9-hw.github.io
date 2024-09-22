@@ -18,15 +18,15 @@
                             "url": "overseas-migration.csv"
                         },
                         "key": "State",
-                        "fields": ["Y2004_05", "Y2004_05_Total"]
+                        "fields": ["Y2022_23", "Y2022_23_total"]
                     }
                 },
-                {"calculate": "datum.Y2004_05/datum.Y2004_05_Total", "as": "Percentage of annual national migration total"}
+                {"calculate": "datum.Y2022_23/datum.Y2022_23_total", "as": "% of annual national migration total"}
             ],
             "mark": {"type": "geoshape"},
             "encoding": {
                 "color": {
-                    "field": "Percentage of annual national migration total",
+                    "field": "% of annual national migration total",
                     "type": "quantitative",
                     "scale": {
                         "type": "threshold",
